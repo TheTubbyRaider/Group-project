@@ -1,0 +1,81 @@
+For Handcrafted Haven, the color scheme and design theme should reflect the artisanal and handcrafted nature of the products being sold, with a focus on warmth, sustainability, and community. Below is a suggestion for the theme:
+
+Color Scheme
+Primary Colors:
+Earthy Tones: Warm browns, beiges, and greens to reflect nature and handmade craftsmanship.
+Example: #8B5E3C (Brown), #D1B097 (Light Beige), #A8D5BA (Soft Green)
+Accent Colors:
+Muted Gold: For highlighting important elements like buttons and headings.
+Example: #D1A15D
+Subtle Coral: For minor highlights or notifications.
+Example: #FF6B6B
+Background Color:
+Off-white or light beige: Provides a clean, neutral backdrop that doesn’t distract from the products.
+Example: #F7F3E9 (Light Beige)
+Typography
+Primary Font:
+Serif font for headings (to emphasize a handcrafted, timeless feel):
+Example: Playfair Display or Merriweather.
+Sans-serif font for body text (for readability and modern feel):
+Example: Poppins or Open Sans.
+Font Weights:
+Use bold or semi-bold for headings and important elements.
+Use regular or light for body text and secondary elements.
+Layout and Design Elements
+General Layout:
+The site should have a two-column layout for product listings (with filter options on the left side and products displayed on the right).
+The homepage should have a hero section at the top featuring a large image carousel with popular products and promotions.
+Navigation Bar: Should be sticky, with links to the homepage, product categories, seller profiles, and the cart.
+Cards for Product Listings: Each product should be displayed in a card with an image, title, brief description, price, and a rating system.
+Buttons: Rounded buttons with hover effects, using the Muted Gold for important actions like "Add to Cart" or "Buy Now".
+Form Inputs: Simple, rounded input fields for filters, reviews, and contact forms.
+Footer: Contains quick links, social media icons, and a brief description of the platform.
+Design Tools
+Figma: Use Figma for wireframes and creating mockups of the homepage, product pages, and user flows.
+Adobe XD: Alternatively, use Adobe XD if Figma isn’t preferred.
+Sketch: If available, Sketch can also be used to create high-fidelity designs.
+User Stories and Work Items
+Here’s an initial list of user stories and work items to begin the project.
+
+User Stories
+As a seller, I want to create an account so that I can sell my products on the platform.
+As a seller, I want to set up my profile, including a description and product list, so that potential buyers can learn more about me and my products.
+As a buyer, I want to browse products by category, price range, and rating so that I can easily find what I’m looking for.
+As a buyer, I want to be able to add products to my cart and proceed to checkout so that I can purchase items.
+As a buyer, I want to leave a rating and review for a product I’ve purchased so that I can share my experience with others.
+As an admin, I want to manage users (both sellers and buyers) and their content so that the platform runs smoothly.
+As a user, I want the website to be responsive so that I can browse it comfortably on any device (mobile, tablet, desktop).
+As a seller, I want to edit or remove my product listings so that I can keep my inventory up to date.
+As a buyer, I want to be able to filter products by various criteria (category, price, rating) so that I can find products that match my preferences.
+As a user, I want to see recommendations based on my browsing and purchase history so that I can discover more products I may like.
+Work Items
+Set up the basic project structure with Next.js, Node.js, and GitHub repository.
+
+Work Item: Initialize project repo and install basic dependencies for Next.js.
+Create user authentication system for sellers and buyers.
+
+Work Item: Implement login and registration functionality (JWT or OAuth).
+Design and implement the homepage layout with featured products and categories.
+
+Work Item: Design homepage wireframe and create layout using Tailwind CSS or custom CSS.
+Design and implement seller profile pages with the ability to upload images and describe their craft.
+
+Work Item: Create seller profile CRUD functionality.
+Implement product listing functionality allowing sellers to list, edit, and delete products.
+
+Work Item: Set up form for product creation and integrate it with the back-end database.
+Build search and filter functionality for products (by category, price, and rating).
+
+Work Item: Create filter component and integrate it with the product catalog.
+Design and implement product cards displaying image, name, price, and rating.
+
+Work Item: Develop product cards and integrate them with product data from the database.
+Build the shopping cart system for adding, viewing, and removing items.
+
+Work Item: Develop shopping cart functionality with a session or persistent storage.
+Set up review and rating system for products, allowing buyers to leave feedback.
+
+Work Item: Implement a review submission form and integrate it with the product page.
+Design and implement responsive design for mobile, tablet, and desktop views.
+
+Work Item: Ensure layout adjusts based on screen size using CSS media queries or Tailwind’s responsive classes.
