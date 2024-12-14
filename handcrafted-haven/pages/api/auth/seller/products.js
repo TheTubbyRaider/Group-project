@@ -18,3 +18,21 @@ export default function handler(req, res) {
       return res.status(405).json({ message: 'Method Not Allowed' });
   }
 }
+
+
+const mongoose = require('mongoose');
+
+const productSchema = new mongoose.Schema({
+  name: { type: String, required: true },
+  description: { type: String },
+  price: { type: Number, required: true },
+  category: {
+    type: String,
+    enum: ['Jewelry', 'Art', 'Home Decor', 'Toys', 'Craft Supplies'], // Add more categories as needed
+    required: true,
+  },
+  rating: { type: Number, min: 0, max: 5 },
+  image: { type: String }, // URL or file path for product image
+});
+
+module.exports = mongoose.model('Product', productSchema);
