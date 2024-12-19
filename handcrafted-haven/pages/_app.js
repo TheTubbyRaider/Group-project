@@ -1,10 +1,8 @@
-import '../styles/globals.css';
+import '../styles/globals.css'; // Import global styles, like TailwindCSS
 
 function MyApp({ Component, pageProps }) {
-  return (
-    // Wrapping each page component in this layout
-    <Component {...pageProps} />
-  )
+  return <Component {...pageProps} />;
 }
 
-export default MyApp
+export default MyApp;
+

@@ -1,53 +1,40 @@
-// pages/product/[id].js
+import { useRouter } from 'next/router';
+import Recommendations from '../../components/Recommendations';
 
-import { useState, useEffect } from 'react';
-import ReviewForm from '../../components/ReviewForm';
+const ProductPage = ({ product, userId }) => {
+  const router = useRouter();
 
-const ProductPage = ({ product }) => {
-  const [reviews, setReviews] = useState([]);
-  
-  useEffect(() => {
-    // Fetch reviews for the product
-    const fetchReviews = async () => {
-      const response = await fetch(`/api/reviews?productId=${product._id}`);
-      const data = await response.json();
-      setReviews(data);
-    };
-    
-    fetchReviews();
-  }, [product]);
-
-  const handleReviewSubmitted = () => {
-    // Refetch reviews after a new review is submitted
-    const fetchReviews = async () => {
-      const response = await fetch(`/api/reviews?productId=${product._id}`);
-      const data = await response.json();
-      setReviews(data);
-    };
-    fetchReviews();
-  };
+  if (!product) {
+    return <p>Loading...</p>;
+  }
 
   return (
-    <div>
+    <div className="product-page">
       <h1>{product.name}</h1>
+      <img src={product.imageUrl} alt={product.name} />
       <p>{product.description}</p>
-      <h2>Reviews</h2>
-      {reviews.map((review) => (
-        <div key={review._id}>
-          <p>Rating: {review.rating}</p>
-          <p>{review.reviewText}</p>
-          <p>By: {review.userEmail}</p>
-        </div>
-      ))}
-      <ReviewForm productId={product._id} onReviewSubmitted={handleReviewSubmitted} />
+      <p>${product.price}</p>
+
+      <button className="btn btn-primary">Add to Cart</button>
+
+      {/* Recommendations Section */}
+      <Recommendations userId={userId} />
     </div>
   );
 };
 
-export async function getServerSideProps({ params }) {
-  const res = await fetch(`https://yourapi.com/products/${params.id}`);
+// Fetch the product details for the page
+export async function getServerSideProps(context) {
+  const { id } = context.params;
+  const res = await fetch(`${process.env.API_URL}/products/${id}`);
   const product = await res.json();
-  return { props: { product } };
+
+  // You can pass the logged-in user ID as a prop or fetch it from session
+  const userId = 1; // Example static user ID, replace with actual user ID from session or cookie
+
+  return {
+    props: { product, userId },
+  };
 }
 
 export default ProductPage;
